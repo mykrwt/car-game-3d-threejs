@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Coin Rush 3D</title>
+<style>
+html,body{margin:0;height:100%;overflow:hidden;background:#87ceeb;font-family:system-ui,-apple-system,sans-serif}
+canvas{display:block}
+#hud{position:fixed;top:12px;left:12px;color:#fff;text-shadow:0 2px 4px #0009;font-weight:700;font-size:18px;pointer-events:none;line-height:1.5}
+#msg{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;background:#000a;color:#fff;text-align:center;padding:24px;box-sizing:border-box}
+#msg h1{margin:0;font-size:40px}
+#msg p{margin:0;max-width:420px;line-height:1.5}
+#msg button{font-size:20px;padding:12px 28px;border:0;border-radius:10px;background:#ffcc00;font-weight:700;cursor:pointer;margin-top:8px}
+#msg button:focus-visible{outline:3px solid #fff;outline-offset:3px}
+#touch{position:fixed;bottom:16px;left:0;right:0;display:flex;justify-content:space-between;padding:0 16px;pointer-events:none}
+#touch .group{display:flex;gap:12px;pointer-events:auto}
+#touch button{width:76px;height:76px;border-radius:50%;border:0;background:#fffa;font-size:16px;font-weight:700;user-select:none;-webkit-user-select:none;touch-action:none}
+@media (hover:hover){#touch{display:none}}
+</style>
+</head>
+<body>
+<div id="hud"><div id="score">Coins: 0 / 20</div><div id="time">Time: 60.0</div><div id="speed">0 km/h</div></div>
+<div id="msg">
+<h1>Coin Rush 3D</h1>
+<p>Drive through 20 coins before time runs out. Arrow keys or WASD to drive, Space to brake, R to restart.</p>
+<button id="start">Start</button>
+</div>
+<div id="touch">
+<div class="group"><button data-k="left">Left</button><button data-k="right">Right</button></div>
+<div class="group"><button data-k="brake">Brake</button><button data-k="gas">Gas</button></div>
+</div>
+<script type="module" src="main.js"></script>
+</body>
+</html>
